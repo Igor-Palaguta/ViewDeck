@@ -2938,21 +2938,26 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
         _controllers[side] = controller;
         II_RETAIN(controller);
     }
-    
-    if (controller) {
-        // and finish the transition
-        void(^finishTransition)(void) = ^{
-            UIViewController* parentController = [[self parentViewController] parentViewController] ?: [self presentingViewController] ?: self;
+
+   if (controller) {
+      // and finish the transition
+      __weak IIViewDeckController* weakSelf = self;
+      void(^finishTransition)(void) = ^{
+         IIViewDeckController* strongSelf = weakSelf;
+         if ( strongSelf )
+         {
+            UIViewController* parentController = [[strongSelf parentViewController] parentViewController] ?: [strongSelf presentingViewController] ?: strongSelf;
             
             [parentController addChildViewController:controller];
-            [controller setViewDeckController:self];
+            [controller setViewDeckController:strongSelf];
             afterBlock(controller);
             [controller didMoveToParentViewController:parentController];
-            [self applyCenterViewOpacityIfNeeded];
-        };
-        
-        [self enqueueFinishTransitionBlock:finishTransition forController:controller];
-    }
+            [strongSelf applyCenterViewOpacityIfNeeded];
+         }
+      };
+
+      [self enqueueFinishTransitionBlock:finishTransition forController:controller];
+   }
 }
 
 - (UIViewController *)leftController {
