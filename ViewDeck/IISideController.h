@@ -32,7 +32,7 @@
 + (IISideController*)autoConstrainedSideControllerWithViewController:(UIViewController*)controller;
 + (IISideController*)sideControllerWithViewController:(UIViewController*)controller constrained:(CGFloat)constrainedSize;
 
-- (id)initWithViewController:(UIViewController*)controller constrained:(CGFloat)constrainedSize;
+- (instancetype)initWithViewController:(UIViewController*)controller constrained:(CGFloat)constrainedSize;
 
 - (void)shrinkSide;
 - (void)shrinkSideAnimated:(BOOL)animated;

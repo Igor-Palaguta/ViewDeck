@@ -350,7 +350,7 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
     _ledge[IIViewDeckLeftSide] = _ledge[IIViewDeckRightSide] = _ledge[IIViewDeckTopSide] = _ledge[IIViewDeckBottomSide] = 44;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder])) {
         [self commonInitWithCenterViewController:nil];
@@ -358,7 +358,7 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         [self commonInitWithCenterViewController:nil];
@@ -366,28 +366,28 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
     return self;
 }
 
-- (id)initWithCenterViewController:(UIViewController*)centerController {
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController {
     if ((self = [super initWithNibName:nil bundle:nil])) {
         [self commonInitWithCenterViewController:centerController];
     }
     return self;
 }
 
-- (id)initWithCenterViewController:(UIViewController*)centerController leftViewController:(UIViewController*)leftController {
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController leftViewController:(UIViewController*)leftController {
     if ((self = [self initWithCenterViewController:centerController])) {
         self.leftController = leftController;
     }
     return self;
 }
 
-- (id)initWithCenterViewController:(UIViewController*)centerController rightViewController:(UIViewController*)rightController {
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController rightViewController:(UIViewController*)rightController {
     if ((self = [self initWithCenterViewController:centerController])) {
         self.rightController = rightController;
     }
     return self;
 }
 
-- (id)initWithCenterViewController:(UIViewController*)centerController leftViewController:(UIViewController*)leftController rightViewController:(UIViewController*)rightController {
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController leftViewController:(UIViewController*)leftController rightViewController:(UIViewController*)rightController {
     if ((self = [self initWithCenterViewController:centerController])) {
         self.leftController = leftController;
         self.rightController = rightController;
@@ -395,21 +395,21 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
     return self;
 }
 
-- (id)initWithCenterViewController:(UIViewController*)centerController topViewController:(UIViewController*)topController {
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController topViewController:(UIViewController*)topController {
     if ((self = [self initWithCenterViewController:centerController])) {
         self.topController = topController;
     }
     return self;
 }
 
-- (id)initWithCenterViewController:(UIViewController*)centerController bottomViewController:(UIViewController*)bottomController {
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController bottomViewController:(UIViewController*)bottomController {
     if ((self = [self initWithCenterViewController:centerController])) {
         self.bottomController = bottomController;
     }
     return self;
 }
 
-- (id)initWithCenterViewController:(UIViewController*)centerController topViewController:(UIViewController*)topController bottomViewController:(UIViewController*)bottomController {
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController topViewController:(UIViewController*)topController bottomViewController:(UIViewController*)bottomController {
     if ((self = [self initWithCenterViewController:centerController])) {
         self.topController = topController;
         self.bottomController = bottomController;
@@ -417,7 +417,7 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
     return self;
 }
 
-- (id)initWithCenterViewController:(UIViewController*)centerController leftViewController:(UIViewController*)leftController rightViewController:(UIViewController*)rightController topViewController:(UIViewController*)topController bottomViewController:(UIViewController*)bottomController {
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController leftViewController:(UIViewController*)leftController rightViewController:(UIViewController*)rightController topViewController:(UIViewController*)topController bottomViewController:(UIViewController*)bottomController {
     if ((self = [self initWithCenterViewController:centerController])) {
         self.leftController = leftController;
         self.rightController = rightController;
@@ -3435,7 +3435,7 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
 
 @synthesize allowUserInteractionEnabled = _allowUserInteractionEnabled;
 
-- (id)init {
+- (instancetype)init {
     if ((self = [super init])) {
         _allowUserInteractionEnabled = YES;
         _userInteractionEnabled = [self isUserInteractionEnabled];
@@ -3443,7 +3443,7 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if ((self = [super initWithCoder:aDecoder])) {
         _allowUserInteractionEnabled = YES;
         _userInteractionEnabled = [self isUserInteractionEnabled];
@@ -3451,7 +3451,7 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
         _allowUserInteractionEnabled = YES;
         _userInteractionEnabled = [self isUserInteractionEnabled];

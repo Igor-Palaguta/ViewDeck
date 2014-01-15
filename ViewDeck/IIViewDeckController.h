@@ -201,14 +201,14 @@ typedef void (^IIViewDeckControllerBounceBlock) (IIViewDeckController *controlle
 @property (nonatomic, strong) NSString *centerTapperAccessibilityLabel; // Voice over accessibility label for button to close side panel
 @property (nonatomic, strong) NSString *centerTapperAccessibilityHint;  // Voice over accessibility hint for button to close side panel
 
-- (id)initWithCenterViewController:(UIViewController*)centerController;
-- (id)initWithCenterViewController:(UIViewController*)centerController leftViewController:(UIViewController*)leftController;
-- (id)initWithCenterViewController:(UIViewController*)centerController rightViewController:(UIViewController*)rightController;
-- (id)initWithCenterViewController:(UIViewController*)centerController leftViewController:(UIViewController*)leftController rightViewController:(UIViewController*)rightController;
-- (id)initWithCenterViewController:(UIViewController*)centerController topViewController:(UIViewController*)topController;
-- (id)initWithCenterViewController:(UIViewController*)centerController bottomViewController:(UIViewController*)bottomController;
-- (id)initWithCenterViewController:(UIViewController*)centerController topViewController:(UIViewController*)topController bottomViewController:(UIViewController*)bottomController;
-- (id)initWithCenterViewController:(UIViewController*)centerController leftViewController:(UIViewController*)leftController rightViewController:(UIViewController*)rightController topViewController:(UIViewController*)topController bottomViewController:(UIViewController*)bottomController;
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController;
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController leftViewController:(UIViewController*)leftController;
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController rightViewController:(UIViewController*)rightController;
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController leftViewController:(UIViewController*)leftController rightViewController:(UIViewController*)rightController;
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController topViewController:(UIViewController*)topController;
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController bottomViewController:(UIViewController*)bottomController;
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController topViewController:(UIViewController*)topController bottomViewController:(UIViewController*)bottomController;
+- (instancetype)initWithCenterViewController:(UIViewController*)centerController leftViewController:(UIViewController*)leftController rightViewController:(UIViewController*)rightController topViewController:(UIViewController*)topController bottomViewController:(UIViewController*)bottomController;
 
 - (void)setLeftSize:(CGFloat)leftSize completion:(void(^)(BOOL finished))completion;
 - (void)setRightSize:(CGFloat)rightSize completion:(void(^)(BOOL finished))completion;
