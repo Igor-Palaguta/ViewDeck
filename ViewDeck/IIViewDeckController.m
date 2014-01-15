@@ -444,8 +444,11 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
 }
 
 - (void)dealloc {
+    [self removeObserver:self forKeyPath:@"parentViewController"];
+    [self removeObserver:self forKeyPath:@"presentingViewController"];
+
     [self cleanup];
-    
+
     self.centerController.viewDeckController = nil;
     self.centerController = nil;
     self.leftController.viewDeckController = nil;
