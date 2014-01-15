@@ -2259,6 +2259,7 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
     @synchronized (self.view) {
         ++_disabledUserInteractions;
         if (_disabledUserInteractions == 1) {
+            [self.view endEditing: YES];
             ((IIViewDeckView*)self.view).allowUserInteractionEnabled = NO;
         }
     }
